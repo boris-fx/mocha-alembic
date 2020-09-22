@@ -141,7 +141,7 @@ FOREACH(COMPONENT ${_ilmbase_FIND_COMPONENTS})
 
   FIND_LIBRARY(ALEMBIC_ILMBASE_${UPPERCOMPONENT}_LIB
     NAMES
-      ${COMPONENT}-${_ilmbase_libs_ver} ${COMPONENT}
+      ${COMPONENT}-${_ilmbase_libs_ver} ${COMPONENT} ${COMPONENT}_s
     HINTS
       ${_ilmbase_SEARCH_DIRS}
     PATH_SUFFIXES
