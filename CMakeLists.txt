@@ -139,7 +139,9 @@ ENDIF()
 # Set some debug vs opt flags
 if ("${CMAKE_BUILD_TYPE}" MATCHES "Debug" AND NOT MSVC)
     add_definitions(-Wall -Werror -Wextra -Wno-unused-parameter -Wno-deprecated)
-    add_definitions(-Wno-error=deprecated-copy -Wno-error=catch-value)
+    if(NOT APPLE)
+       add_definitions(-Wno-error=deprecated-copy -Wno-error=catch-value)
+    endif()
     if((CMAKE_CXX_COMPILER_ID MATCHES "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 7.0) OR
         CMAKE_CXX_COMPILER_ID MATCHES "CLANG")
         add_definitions( -Wno-error=implicit-fallthrough)
